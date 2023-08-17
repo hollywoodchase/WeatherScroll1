@@ -2,7 +2,7 @@ const express = require("express");
 const router = express.Router();
 
 // Load Day model
-const Day = require("../../my-app/src/models/Day");
+const Day = require("../../models/Day");
 
 // @route GET api/weather/test
 // @description tests weather route
