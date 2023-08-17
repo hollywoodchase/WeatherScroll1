@@ -10,9 +10,9 @@
     "heroku-postbuild": "NPM_CONFIG_PRODUCTION=false npm install npm && run build",
     "install-server": "cd backend && npm install",
     "start-server": "cd backend && node app.js",
-    "install-client": "cd client && npm install",
-    "build-client": "cd client && npm run build",
-    "start-client": "cd client && npm run start"
+    "install-client": "cd my-app && npm install",
+    "build-client": "cd my-app && npm run build",
+    "start-client": "cd my-app && npm run start"
   },
   "repository": {
     "type": "git",

@@ -9,8 +9,8 @@ app.use(bodyParser.json());
 app.use(cors());
 
 // API
-const weather = require('/api/weather');
-app.use('/api/weather', weather);
+const weather = require('../routes/api/weather');
+app.use('../routes/api/weather', weather);
 
 app.use(express.static(path.join(__dirname, '../build')))
 app.get('*', (req, res) => {
