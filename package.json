@@ -4,15 +4,9 @@
   "description": "",
   "main": "app.js",
   "scripts": {
+    "start": "node app.js",
     "app": "nodemon app.js",
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node backend/server.js",
-    "heroku-postbuild": "NPM_CONFIG_PRODUCTION=false npm install npm && run build",
-    "install-server": "cd backend && npm install",
-    "start-server": "cd backend && node app.js",
-    "install-client": "cd my-app && npm install",
-    "build-client": "cd my-app && npm run build",
-    "start-client": "cd my-app && npm run start"
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
     "type": "git",
@@ -26,21 +20,11 @@
   "homepage": "https://github.com/nurislam03/MERN_A_to_Z#readme",
   "dependencies": {
     "body-parser": "^1.19.0",
-    "config": "^3.3.9",
-    "cors": "^2.8.5",
-    "dotenv": "^16.3.1",
     "express": "^4.17.1",
-    "mongodb": "^5.7.0",
     "mongoose": "^5.5.15",
-    "react-bootstrap-range-slider": "^3.0.8",
     "validation": "0.0.1"
   },
   "devDependencies": {
-    "@flydotio/dockerfile": "^0.4.5",
     "nodemon": "^1.19.1"
-  },
-  "proxy": "http://localhost:5000",
-  "engines": {
-    "node": "10.16.0"
-}
+  }
 }
