@@ -1,23 +1,14 @@
 const express = require('express');
+const MongoClient = require('mongodb').MongoClient;
 const bodyParser = require('body-parser');
-const cors = require('cors');
-const path = require('path')
 const app = express();
-require('./database');
-
-app.use(bodyParser.json());
-app.use(cors());
-
-// API
-const weather = require('../routes/api/weather');
-app.use('../routes/api/weather', weather);
-
-app.use(express.static(path.join(__dirname, '../build')))
-app.get('*', (req, res) => {
-    res.sendFile(path.join(__dirname, '../build'))
-})
-
-const port = process.env.PORT || 5000;
-app.listen(port, () => {
-    console.log(`Server started on port ${port}`);
-});
+const port = 8000;
+ app.use(bodyParser.urlencoded({extended: true}));
+  MongoClient.connect( "mongodb+srv://hollywoodchase:bigNsmall517!@cluster0.xnreyj9.mongodb.net/?retryWrites=true&w=majority",{ useNewUrlParser: true }, (err, database) => 
+  {
+     if (err) return console.log(err);
+     require('./app/routes')(app, database);
+      app.listen(port, () => {
+           console.log("We are live on " +port);
+  });
+ });
